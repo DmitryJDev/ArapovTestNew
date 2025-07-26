@@ -1,0 +1,143 @@
+.hero-section {
+    background: url(/assets/img/content/timeframes.webp) no-repeat bottom right;
+    background-size: 100% 100%;
+    color: white;
+    height: 250px;
+}
+
+.section-i {
+    padding: 0;
+}
+
+.pictureImg {
+    width: 800px;
+
+}
+
+h2,
+h1 {
+    align-self: center;
+}
+
+@media (min-width: 700px) {
+    .hero-section {
+        height: 400px;
+    }
+}
+
+@media (min-width: 900px) {
+    h1 {
+        text-align: center !important;
+    }
+
+    .hero-section {
+        height: 500px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .hero-section {
+        height: 600px;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pad6 {
+    padding: 60px 0;
+}
+
+.pad {
+    margin: 10px 30px 40px;
+    text-align: center;
+}
+
+/* Базовые стили для мобильных устройств */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #343a40;
+    color: #ffffff;
+    display: none;
+    /* Скрываем заголовки для мобильных */
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+/* Мобильный стиль - каждая строка представлена как карточка */
+tbody tr {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f3f5;
+}
+
+/* Делаем строки блочными для удобства чтения на мобайле */
+td {
+    display: block;
+    text-align: left;
+    padding: 8px;
+    position: relative;
+}
+
+/* Добавляем подписи для мобильных устройств */
+td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+/* Адаптация для планшетов и десктопов */
+@media (min-width: 768px) {
+    table {
+        display: table;
+        font-size: 16px;
+    }
+
+    thead {
+        display: table-header-group;
+        /* Показываем заголовки */
+    }
+
+    tbody tr {
+        display: table-row;
+        margin-bottom: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    td {
+        display: table-cell;
+        padding: 12px 15px;
+        border: 1px solid #dee2e6;
+    }
+
+    td:before {
+        display: none;
+    }
+}

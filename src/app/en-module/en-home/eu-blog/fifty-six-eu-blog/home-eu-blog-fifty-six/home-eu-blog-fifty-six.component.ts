@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { ArticlesService } from '../../../../../servises/articles.service';
+
+@Component({
+  selector: 'app-home-eu-blog-fifty-six',
+  templateUrl: './home-eu-blog-fifty-six.component.html',
+  styleUrl: './home-eu-blog-fifty-six.component.scss',
+})
+export class HomeEuBlogFiftySixComponent implements OnInit {
+  constructor(
+    private meta: Meta,
+    private titleService: Title,
+    private articleServ: ArticlesService
+  ) {}
+  ngOnInit(): void {
+    this.titleService.setTitle('Trading Books: How They Benefit Beginners?');
+    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
+    this.meta.addTag({
+      name: 'description',
+      content:
+        'Discover how trading books can help beginner traders. Useful recommendations and top books to start your journey in the financial markets.',
+    });
+    this.meta.updateTag({ name: 'datePublished', content: '2025-04-04' });
+    this.meta.updateTag({
+      property: 'og:image',
+      content: '/assets/img/content/benefitsoftradingbooks.jpg',
+    });
+    this.gerRandom();
+  }
+  randomArticleRus: any = [];
+  gerRandom() {
+    this.randomArticleRus = this.articleServ.getRandomUkArticles();
+  }
+}
